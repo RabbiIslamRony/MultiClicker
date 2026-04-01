@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cache Clearer — Settings</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Page header -->
+    <header class="page-header">
+      <h1 class="page-title">
+        <span class="header-icon">&#9889;</span>
+        Cache Clearer
+        <span class="page-subtitle">— Settings</span>
+      </h1>
+      <div class="header-actions">
+        <button class="btn btn-ghost" id="btn-export">Export JSON</button>
+        <button class="btn btn-ghost" id="btn-import">Import JSON</button>
+        <input type="file" id="import-file-input" accept=".json,application/json" class="sr-only" />
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content" id="main-content">
+
+      <div class="section-toolbar">
+        <button class="btn btn-primary" id="btn-add-category">+ Add Category</button>
+      </div>
+
+      <!-- Categories rendered here -->
+      <div id="category-list"></div>
+
+      <div id="empty-msg" class="empty-msg hidden">
+        No categories yet. Click "+ Add Category" to get started.
+      </div>
+
+    </main>
+
+    <!-- Status bar -->
+    <div id="status-bar" class="status-bar hidden"></div>
+
+  </div><!-- /#app -->
+
+  <!-- ── Modal ─────────────────────────────────────────────────── -->
+  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Modal</h2>
+        <button class="icon-btn modal-close" id="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Form injected here -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="modal-cancel">Cancel</button>
+        <button class="btn btn-primary" id="modal-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Confirm dialog ─────────────────────────────────────────── -->
+  <div id="confirm-overlay" class="modal-overlay hidden" role="alertdialog" aria-modal="true">
+    <div class="modal modal-sm">
+      <div class="modal-header">
+        <h2 class="modal-title" id="confirm-title">Confirm</h2>
+      </div>
+      <div class="modal-body">
+        <p id="confirm-message"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="confirm-cancel">Cancel</button>
+        <button class="btn btn-danger" id="confirm-ok">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
