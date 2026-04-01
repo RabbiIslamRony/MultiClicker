@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls d:/MultiClicker/LICENSE*)"
+      "Bash(ls d:/MultiClicker/LICENSE*)",
+      "Bash(gh repo:*)"
     ]
   }
 }
