@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(ls d:/MultiClicker/LICENSE*)",
-      "Bash(gh repo:*)"
+      "Bash(gh repo:*)",
+      "Bash(node build.js)",
+      "Bash(gh release:*)",
+      "Bash(gh gist:*)",
+      "Bash(sed -i 's|> 🔗 https://github.com/RabbiIslamRony/MultiClicker|> 🔗 https://github.com/RabbiIslamRony/MultiClicker\\\\n> \\\\n> 📦 **[Download v1.0.0 → multiclicker-extension.zip]\\(https://github.com/RabbiIslamRony/MultiClicker/releases/download/v1.0.0/multiclicker-extension.zip\\)**|' /tmp/multiclicker-guide.md)"
     ]
   }
 }
