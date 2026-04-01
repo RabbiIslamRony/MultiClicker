@@ -1,5 +1,5 @@
 // ================================================================
-//  CACHE CLEARER — SETTINGS PAGE SCRIPT
+//  MULTICLICKER — SETTINGS PAGE SCRIPT
 // ================================================================
 
 // ── Security: never log passwords ────────────────────────────────
@@ -308,7 +308,7 @@ function openCategoryModal(existing) {
       <label class="form-label" for="f-cat-name">Name</label>
       <input class="form-input" type="text" id="f-cat-name"
         value="${escapeHTML(existing?.name ?? '')}"
-        placeholder="e.g. Directorist" autocomplete="off" />
+        placeholder="e.g. My WordPress Sites" autocomplete="off" />
     </div>
     <div class="form-group">
       <label class="form-label" for="f-cat-color">Color</label>
@@ -437,7 +437,7 @@ function openTargetModal(cat, site, existing) {
       <label class="form-label" for="f-tgt-name">Name</label>
       <input class="form-input" type="text" id="f-tgt-name"
         value="${escapeHTML(existing?.name ?? '')}"
-        placeholder="e.g. Gravatar Cache" autocomplete="off" />
+        placeholder="e.g. Clear Cache" autocomplete="off" />
     </div>
     <div class="form-group">
       <label class="form-label" for="f-tgt-url">URL</label>
@@ -561,7 +561,7 @@ document.getElementById('btn-export').addEventListener('click', async () => {
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
-  a.download = 'cache-clearer-config.json';
+  a.download = 'multiclicker-config.json';
   a.click();
   URL.revokeObjectURL(url);
   showStatus('Config exported successfully.');

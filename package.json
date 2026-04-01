@@ -1,0 +1,9 @@
+{
+  "name": "MultiClicker",
+  "version": "1.0.0",
+  "description": "A minimal Chrome extension to automate button clicks across multiple WordPress sites with one click.",
+  "scripts": {
+    "setup:icons": "node icons/generate-icons.js",
+    "build": "node build.js"
+  }
+}

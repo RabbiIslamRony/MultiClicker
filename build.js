@@ -1,13 +1,13 @@
 // ================================================================
-//  CACHE CLEARER EXTENSION — BUILD SCRIPT
+//  MULTICLICKER EXTENSION — BUILD SCRIPT
 //  Packages the extension into a .zip ready for:
 //    - Chrome Web Store upload
 //    - Manual "Load unpacked" sharing
 //
 //  Run from project root:
-//    node extension/build.js
+//    node build.js
 //  Or:
-//    pnpm run build
+//    npm run build
 // ================================================================
 
 const fs   = require('fs');
@@ -15,10 +15,9 @@ const path = require('path');
 const { execSync, spawnSync } = require('child_process');
 
 // ── Paths ─────────────────────────────────────────────────────────
-const EXT_DIR  = __dirname;                          // extension/
-const ROOT_DIR = path.join(__dirname, '..');         // project root
-const DIST_DIR = path.join(ROOT_DIR, 'dist');        // dist/
-const ZIP_PATH = path.join(ROOT_DIR, 'cache-clearer-extension.zip');
+const EXT_DIR  = __dirname;                          // project root (all extension files here)
+const DIST_DIR = path.join(__dirname, 'dist');       // dist/
+const ZIP_PATH = path.join(__dirname, 'multiclicker-extension.zip');
 
 // ── Files included in the build (relative to extension/) ─────────
 const BUILD_FILES = [
@@ -65,7 +64,7 @@ function ensureIcons() {
   warn(`Icons missing (${missing.join(', ')}) — generating…`);
   const result = spawnSync('node', [path.join(EXT_DIR, 'icons', 'generate-icons.js')], {
     stdio: 'inherit',
-    cwd: ROOT_DIR,
+    cwd: EXT_DIR,
   });
   if (result.status !== 0) fail('Icon generation failed. Check generate-icons.js.');
   ok('Icons generated.');
@@ -97,7 +96,7 @@ function copyToDist() {
   ok(`Copied to ${c.grey}dist/${c.reset}`);
 }
 
-// ── Step 4: Zip dist/ → cache-clearer-extension.zip ──────────────
+// ── Step 4: Zip dist/ → multiclicker-extension.zip ───────────────
 function createZip() {
   if (fs.existsSync(ZIP_PATH)) fs.unlinkSync(ZIP_PATH);
 
@@ -112,12 +111,12 @@ function createZip() {
   }
 
   const sizeKB = (fs.statSync(ZIP_PATH).size / 1024).toFixed(1);
-  ok(`${c.bold}cache-clearer-extension.zip${c.reset} created  ${c.grey}(${sizeKB} KB)${c.reset}`);
+  ok(`${c.bold}multiclicker-extension.zip${c.reset} created  ${c.grey}(${sizeKB} KB)${c.reset}`);
 }
 
 // ── Main ──────────────────────────────────────────────────────────
 console.log();
-console.log(`${c.bold}  Cache Clearer — Extension Build${c.reset}`);
+console.log(`${c.bold}  MultiClicker — Extension Build${c.reset}`);
 hr();
 
 info('Checking icons…');
@@ -135,7 +134,7 @@ createZip();
 console.log();
 hr();
 console.log(`\n  ${c.bold}${c.green}Build complete!${c.reset}\n`);
-console.log(`  ${c.bold}cache-clearer-extension.zip${c.reset}`);
+console.log(`  ${c.bold}multiclicker-extension.zip${c.reset}`);
 console.log(`  ${c.grey}Located at: ${ZIP_PATH}${c.reset}\n`);
 console.log('  To install manually:');
 console.log(`  ${c.cyan}1.${c.reset} Extract the zip`);
