@@ -1,8 +1,8 @@
 // ================================================================
-//  CACHE CLEARER — ICON GENERATOR
+//  MULTICLICKER — ICON GENERATOR
 //  Generates icon16.png, icon48.png, icon128.png using puppeteer.
-//  Run: node extension/icons/generate-icons.js
-//       (from the project root, d:\Cache Clear file\)
+//  Run: npm run setup:icons
+//       (from the project root)
 // ================================================================
 
 const path = require('path');

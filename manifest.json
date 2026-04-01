@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Cache Clearer",
+  "name": "MultiClicker",
   "version": "1.0.0",
-  "description": "Automated cache clearing tool for WordPress sites",
+  "description": "Automate button clicks across multiple WordPress sites with one click.",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -10,7 +10,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Cache Clearer",
+    "default_title": "MultiClicker",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",

@@ -1,21 +1,21 @@
-# ⚡ Cache Clearer — Chrome Extension
+# ⚡ MultiClicker — Chrome Extension
 
-A minimal Chrome extension to clear caches across multiple WordPress sites with one click.
-Organise sites into **categories**, store separate login credentials per site, and clear
+A minimal Chrome extension to automate button clicks across multiple WordPress sites with one click.  
+Organise sites into **categories**, store separate login credentials per site, and trigger  
 any number of admin-page buttons — all without leaving your browser.
 
 ---
 
 ## Features
 
-- **Category → Site → Target** hierarchy — group multiple sites cleanly
-- **Per-site login** — each site has its own WordPress credentials (stored encrypted)
-- **Confirm-popup support** — if clearing triggers a confirmation modal, it clicks that too
-- **Run All** — clear every target in a category with one button
-- **Status feedback** — live idle / running / success / error indicators per target
-- **Settings UI** — add, edit, delete categories, sites and targets without touching code
-- **Export / Import** — back up or share your config as a JSON file
-- **Minimal design** — 360 px popup, no clutter
+- **Category → Site → Target** hierarchy — group multiple sites cleanly  
+- **Per-site login** — each site has its own WordPress credentials (stored encrypted)  
+- **Confirm-popup support** — if a button triggers a confirmation modal, it clicks that too  
+- **Run All** — trigger every target in a category with one button  
+- **Status feedback** — live idle / running / success / error indicators per target  
+- **Settings UI** — add, edit, delete categories, sites and targets without touching code  
+- **Export / Import** — back up or share your config as a JSON file  
+- **Minimal design** — 360 px popup, no clutter  
 
 ---
 
@@ -27,7 +27,7 @@ any number of admin-page buttons — all without leaving your browser.
 
 1. **Download or clone** this repository
    ```
-   git clone https://github.com/YOUR-USERNAME/cache-clearer-extension.git
+   git clone https://github.com/RabbiIslamRony/MultiClicker
    ```
 
 2. **Generate icons** (one-time setup, requires [Node.js](https://nodejs.org))
@@ -52,7 +52,7 @@ any number of admin-page buttons — all without leaving your browser.
    ```bash
    npm run build
    ```
-   This creates `cache-clearer-extension.zip` in the project root.
+   This creates `multiclicker-extension.zip` in the project root.
 
 2. Extract the zip to a folder
 
@@ -139,7 +139,7 @@ Click **+ Add Category** at the top of Settings → choose a name and colour.
 
 You can back up or share your entire configuration (including credentials):
 
-- **Export** — Settings → **Export JSON** → downloads `cache-clearer-config.json`
+- **Export** — Settings → **Export JSON** → downloads `multiclicker-config.json`
 - **Import** — Settings → **Import JSON** → select a previously exported file
 
 > ⚠️ The exported JSON includes passwords in plain text. Keep it secure and
@@ -157,8 +157,8 @@ You can back up or share your entire configuration (including credentials):
 ### Setup
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/cache-clearer-extension.git
-cd cache-clearer-extension
+git clone https://github.com/RabbiIslamRony/MultiClicker
+cd MultiClicker
 npm install
 ```
 
@@ -176,7 +176,7 @@ Creates `icons/icon16.png`, `icons/icon48.png`, `icons/icon128.png`.
 npm run build
 ```
 
-Outputs `cache-clearer-extension.zip` — ready for manual distribution or
+Outputs `multiclicker-extension.zip` — ready for manual distribution or
 Chrome Web Store upload.
 
 ### Project structure
@@ -223,6 +223,14 @@ Pull requests are welcome!
 6. Open a pull request
 
 Please keep the design minimal and avoid adding external dependencies to the extension itself (the extension folder must stay dependency-free for Chrome compatibility).
+
+---
+
+## Disclaimer
+
+> **Use at your own risk.**  
+> This extension interacts with third-party websites using credentials you provide. The author(s) accept **no liability** for data loss, unintended actions, account lockouts, or any other consequences arising from its use. Always verify selectors in a safe environment before running automation on production sites.  
+> Credentials are stored locally in Chrome's `chrome.storage.local` and are **never transmitted** to any server other than your own configured login pages.
 
 ---
 
