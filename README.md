@@ -234,6 +234,20 @@ Please keep the design minimal and avoid adding external dependencies to the ext
 
 ---
 
+---
+
+---
+
+## 🏢 Acknowledgement
+
+This project is partially based on real-world development experience from **SovWare**.
+
+🌐 https://www.sovware.com
+
+> Note: This is an independent project and not officially affiliated with SovWare.
+
+---
+
 ## Licence
 
 [MIT](LICENSE)
